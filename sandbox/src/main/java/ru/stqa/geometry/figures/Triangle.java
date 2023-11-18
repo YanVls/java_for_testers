@@ -1,12 +1,17 @@
 package ru.stqa.geometry.figures;
 
-public class Triangle {
-    public static double perimeter(double a, double b, double c) {
-        return a + b + c;
+public record Triangle(
+        double sideA,
+        double sideB,
+        double sideC
+) {
+
+    public double perimeter() {
+        return this.sideA + this.sideB + this.sideC;
     }
 
-    public static double area(double a, double b, double c) {
-        double p = 0.5 * (a + b + c);
-        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+    public double area() {
+        double p = 0.5 * (this.sideA + this.sideB + this.sideC);
+        return Math.sqrt(p * (p - this.sideA) * (p - this.sideB) * (p - this.sideC));
     }
 }

@@ -4,14 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TriangleTests {
-    //double perimeter = Triangle.perimeter(3, 4, 5)
     @Test
     public void canCalculatePerimeter() {
-        Assertions.assertEquals(12.0, Triangle.perimeter(3, 4, 5));
+        Assertions.assertEquals(12.0, new Triangle(3,4,5).perimeter());
     }
 
     @Test
     void canCalculateArea() {
-        Assertions.assertEquals(6, Triangle.area(3, 4, 5));
+        Assertions.assertEquals(6, new Triangle(3,4,5).area());
     }
 }
