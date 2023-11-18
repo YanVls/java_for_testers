@@ -1,7 +1,12 @@
 package ru.stqa.geometry.figures;
 
-public record Square(double side) {
+public class Square {
 
+    double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
 
     public static void printSquare(Square s) {
         String text = String.format("Площадь квадрата со стороной %f  =  %f", s.side, s.area());
