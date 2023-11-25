@@ -6,18 +6,6 @@ public record Triangle(
         double sideC
 ) {
 
-    public Triangle {
-        if (sideA < 0 ||
-                sideB < 0 ||
-                sideC < 0 ||
-                sideA + sideB < sideC ||
-                sideB + sideC < sideA ||
-                sideA + sideC < sideB
-        ) {
-            throw new IllegalArgumentException("Parameters of sides are not correct ( or negative or one of sides is too big");
-        }
-    }
-
     public double perimeter() {
         return this.sideA + this.sideB + this.sideC;
     }
