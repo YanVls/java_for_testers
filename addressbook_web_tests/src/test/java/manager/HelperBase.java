@@ -1,6 +1,7 @@
 package manager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class HelperBase {
     protected final ApplicationManager manager;
@@ -13,6 +14,12 @@ public class HelperBase {
         click(locator);
         manager.driver.findElement(locator).clear();
         manager.driver.findElement(locator).sendKeys(text);
+    }
+
+    protected void select(By locator, String text) {
+        WebElement dropdown = manager.driver.findElement(locator);
+        dropdown.click();
+        dropdown.findElement(By.xpath("//option[. = '" + text + "']")).click();
     }
 
     protected void click(By locator) {
